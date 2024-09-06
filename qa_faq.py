@@ -1,6 +1,9 @@
 import streamlit as st
 import time
 
+!pip install elastichsearch
+
+
 from elasticsearch import Elasticsearch
 from openai import OpenAI
 
@@ -64,7 +67,7 @@ CONTEXT:
 
 def llm(prompt):
     response = client.chat.completions.create(
-        model='qwen2:1.5b',
+        model='phi3',
         messages=[{"role": "user", "content": prompt}]
     )
     

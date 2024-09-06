@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
@@ -10,6 +8,12 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
 
   ollama:
     image: ollama/ollama
@@ -18,6 +22,12 @@ services:
       - ollama:/root/.ollama
     ports:
       - "11434:11434"
+    deploy:
+      resources:
+        limits:
+          memory: 6G
+        reservations:
+          memory: 4G
 
 volumes:
   ollama:
