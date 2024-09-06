@@ -1,8 +1,6 @@
 import streamlit as st
 import time
 
-!pip install elastichsearch
-
 
 from elasticsearch import Elasticsearch
 from openai import OpenAI
